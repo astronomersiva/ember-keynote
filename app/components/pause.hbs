@@ -1,0 +1,16 @@
+<button
+  {{action @togglePlayState}}
+  class="
+    absolute
+    left-1/4 opacity-25 hover:opacity-50
+    bottom-5
+    text-lg
+    timer
+    {{if @isPaused "text-red-500 opacity-100"}}
+  ">
+  {{#if @isPaused}}
+    {{svg-jar "play" class="icon"}}
+  {{else}}
+    {{svg-jar "pause" class="icon"}}
+  {{/if}}
+</button>

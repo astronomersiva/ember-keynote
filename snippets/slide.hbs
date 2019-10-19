@@ -1,0 +1,26 @@
+<div
+  class="slide-1 {{if @speaker "hidden md:flex" "flex"}}">
+
+  {{!-- Start Slide --}}
+  <h1 class="text-5xl text-center font-bold text-indigo-600 capitalize p-2">
+    One more thing.
+  </h1>
+
+  {{#let (get-code-snippet "slide.js" unindent=false) as |snippet|}}
+    <CodeBlock @language="javascript" @code={{snippet.source}} />
+  {{/let}}
+  {{!-- End Slide --}}
+
+</div>
+
+{{#if @speaker}}
+  <SpeakerControls
+    @isPaused={{@isPaused}}
+    @togglePlayState={{@togglePlayState}}
+    @paginationString={{@paginationString}}
+    @goToPrevSlide={{@goToPrevSlide}}
+    @goToNextSlide={{@goToNextSlide}}
+    @notes={{this.notes}} />
+{{else}}
+  <ToggleFullScreen />
+{{/if}}

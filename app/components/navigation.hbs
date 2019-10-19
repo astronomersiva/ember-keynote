@@ -1,0 +1,7 @@
+<button {{action @goToPrevSlide}} class="absolute bottom-10 left-1/8 opacity-25 hover:opacity-50">
+  {{svg-jar "previous" class="icon"}}
+</button>
+<p class="pagination m-0">{{@paginationString}}</p>
+<button {{action @goToNextSlide}} class="absolute bottom-10 right-1/8 opacity-25 hover:opacity-50">
+  {{svg-jar "next" class="icon"}}
+</button>

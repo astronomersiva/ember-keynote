@@ -1,0 +1,9 @@
+{
+  "name": "slide-controller",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "socket.io": "*"
+  }
+}

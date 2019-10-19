@@ -1,0 +1,268 @@
+@tailwind base;
+
+ol {
+  @apply
+    list-decimal
+    list-inside
+    mt-3;
+}
+
+ul {
+  @apply
+    list-disc
+    list-inside
+    mt-3;
+}
+
+a {
+  @apply
+    underline
+    text-indigo-600;
+}
+
+a:hover {
+  @apply
+    text-pink-600;
+}
+
+code {
+  @apply
+    px-1
+    text-purple-600
+    font-mono
+    bg-gray-200;
+}
+
+p {
+  @apply
+    mt-3
+    mb-3;
+}
+
+h1 {
+  @apply
+    text-3xl
+    font-bold;
+}
+
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-xl;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #393A34;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-size: .9em;
+  line-height: 1.2em;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre > code[class*="language-"] {
+  font-size: 1em;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  background-color: white;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .2em;
+  padding-top: 1px; padding-bottom: 1px;
+  background: #f8f8f8;
+  border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999988; font-style: italic;
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #e3116c;
+}
+.token.punctuation,
+.token.operator {
+  color: #393A34; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name,
+.language-autohotkey .token.selector {
+  color: #00a4db;
+}
+
+.token.function,
+.token.deleted,
+.language-autohotkey .token.tag {
+  color: #9a050f;
+}
+
+.token.tag,
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #00009f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.control-right {
+  right: 10%;
+}
+
+.control-left {
+  left: 10%;
+}
+
+.icon {
+  @apply
+    w-4
+    h-4
+    inline
+    align-baseline
+    stroke-current;
+}
+
+[class*="slide"] {
+  @apply
+    border-15
+    border-solid
+    border-indigo-200
+    flex-1
+    flex-col
+    items-center
+    justify-center;
+}
+
+.timer {
+  font-variant-numeric: tabular-nums;
+}
+
+.pagination {
+  transform: translateX(-50%);
+  font-variant-numeric: tabular-nums;
+  
+  @apply
+    font-mono
+    absolute
+    bottom-10
+    opacity-25
+    left-1/2;
+}
+
+.preview {
+  transform: scale(.4);
+}
+
+@media screen and (min-width: 641px) {
+  .speaker-notes {
+    width: 35vw;
+  }
+}
+
+.slide-1 h2 {
+  position: relative;
+}
+
+.slide-1 h2::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 47%;
+  width: 10%;
+  height: 3px;
+
+  @apply bg-indigo-600;
+}
+
+.slide-2,
+.slide-5 {
+  @apply
+    border-none
+    bg-cover;
+}
+
+.slide-2 {
+  background-image: url('/images/party.jpg');
+}
+
+.slide-2 h1, .slide-5 h1 {
+  background: #f7fafcaa;
+}
+
+.slide-4 {
+  @apply
+    flex-row;
+}
+
+.slide-5 {
+  background-image: url('/images/clouds.jpg');
+}

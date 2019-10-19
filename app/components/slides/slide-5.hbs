@@ -1,0 +1,17 @@
+<div
+  ...attributes
+  class="slide-5 {{if @speaker "hidden md:flex" "flex"}}">
+  <h1 class="text-black p-3 px-8 text-6xl rounded">Thank you!</h1>
+</div>
+
+{{#if @speaker}}
+  <SpeakerControls
+    @isPaused={{@isPaused}}
+    @togglePlayState={{@togglePlayState}}
+    @paginationString={{@paginationString}}
+    @goToPrevSlide={{@goToPrevSlide}}
+    @goToNextSlide={{@goToNextSlide}}
+    @notes={{this.notes}} />
+{{else}}
+  <ToggleFullScreen />
+{{/if}}

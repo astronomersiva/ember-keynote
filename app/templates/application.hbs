@@ -1,0 +1,11 @@
+{{#let (concat "slides/slide-" this.slide) as |Slide|}}
+  <Slide
+    @isPaused={{this.isPaused}}
+    @togglePlayState={{this.togglePlayState}}
+    @goToPrevSlide={{this.goToPrevSlide}}
+    @goToNextSlide={{this.goToNextSlide}}
+    @paginationString={{this.paginationString}}
+    @speaker={{this.speaker}} />
+{{/let}}
+
+{{outlet}}

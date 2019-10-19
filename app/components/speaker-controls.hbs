@@ -1,0 +1,22 @@
+<div class="relative flex flex-col min-h-screen">
+  <SlideNotes @notes={{@notes}} />
+
+  {{!-- 
+  Next slide preview, need to fix styling
+  {{#let (concat "slides/slide-" 2) as |Slide|}}
+    <Slide class="preview" />
+  {{/let}} --}}
+
+  <Clock />
+
+  <ToggleFullScreen @speaker={{true}} />
+
+  <Pause
+    @isPaused={{@isPaused}}
+    @togglePlayState={{@togglePlayState}} />
+
+  <Navigation
+    @paginationString={{@paginationString}}
+    @goToPrevSlide={{@goToPrevSlide}}
+    @goToNextSlide={{@goToNextSlide}} />
+</div>

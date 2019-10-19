@@ -1,0 +1,16 @@
+<div class="speaker-notes w-screen p-8">
+  {{!-- <div class="absolute top-5 right-1/8 text-lg opacity-25 font-mono">
+    <button {{action "toggleNoteVisibility"}}>
+      {{if this.isHidden "Show Notes" "Hide Notes"}}
+    </button>
+  </div> --}}
+
+  {{#if @notes}}
+    <div class="whitespace-normal max-h-4/5vh overflow-scroll">
+      {{!-- {{@notes}} --}}
+      {{markdown-to-html @notes}}
+    </div>
+  {{else}}
+    <p>¯\_(ツ)_/¯</p>
+  {{/if}}
+</div>

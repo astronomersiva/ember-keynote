@@ -1,0 +1,21 @@
+<div
+  ...attributes
+  class="slide-3 {{if @speaker "hidden md:flex" "flex"}}">
+
+  {{#let (get-code-snippet "slide.js" unindent=false) as |snippet|}}
+    <CodeBlock @language="javascript" @code={{snippet.source}} />
+  {{/let}}
+
+</div>
+
+{{#if @speaker}}
+  <SpeakerControls
+    @isPaused={{@isPaused}}
+    @togglePlayState={{@togglePlayState}}
+    @paginationString={{@paginationString}}
+    @goToPrevSlide={{@goToPrevSlide}}
+    @goToNextSlide={{@goToNextSlide}}
+    @notes={{this.notes}} />
+{{else}}
+  <ToggleFullScreen />
+{{/if}}
