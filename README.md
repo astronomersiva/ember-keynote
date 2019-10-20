@@ -1,7 +1,8 @@
 # ember-keynote
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This was built as a demo for my talk on using WebSockets with Ember.
+If you would like to use this, feel free to fork this repo and add
+your slides as components.
 
 ## Prerequisites
 
@@ -10,7 +11,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
@@ -21,32 +21,36 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+* For the speaker view, visit `publicip:4200/?speaker=true`.
+* For the audience view, visit `publicip:4200/`.
 
-### Code Generators
+### Usage
 
-Make use of the many generators for code, try `ember help generate` for more details
+![ember-keynote](screenshots/app.jpg)
 
-### Running Tests
+You can switch between the slides by making use of the arrow keys
+or the `A` and `D` keys. You can also use the control buttons on the screen.
 
-* `ember test`
-* `ember test --server`
+![Controls](screenshots/controls.png)
 
-### Linting
+Use the Screen icon to toggle fullscreen view. This is also possible in the
+audience view but you will have to hover on the bottom right corner to see
+the toggle as it is hidden by default. I am open to improving the UX aspect of this.
 
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+If you pause the presentation, you will be able to navigate the slides but the
+slides will remain frozen for the audience. It will get synced again when you
+resume the presentation.
 
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
+You can add slide notes by adding them to the respective slide component's class.
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+This app makes use of WebSockets. You will have to deploy a Node.js
+app that behaves similar to the middleware in `lib/slide-controller`
+and configure the WebSocket server URL in this app.
+
+Having said that, I guess just running `ember serve` should be sufficient
+for what this app was designed to do.
 
 ## Further Reading / Useful Links
 
