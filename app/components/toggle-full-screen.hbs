@@ -1,9 +1,8 @@
 <button
   {{action "toggleFullScreen"}}
   class="
-    {{if this.shouldHideToggle "hidden"}}
     absolute
-    {{if @speaker "left-1/8 opacity-25 hover:opacity-50" "right-5 opacity-10 hover:opacity-25"}}
+    {{if @speaker "left-1/8 opacity-25 hover:opacity-50" "right-5 opacity-0 hover:opacity-25"}}
     bottom-5
     text-lg
     font-mono

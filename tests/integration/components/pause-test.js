@@ -13,14 +13,5 @@ module('Integration | Component | pause', function(hooks) {
     await render(hbs`<Pause />`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <Pause>
-        template block text
-      </Pause>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

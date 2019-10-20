@@ -12,15 +12,6 @@ module('Integration | Component | navigation', function(hooks) {
 
     await render(hbs`<Navigation />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <Navigation>
-        template block text
-      </Navigation>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '1 / 5');
   });
 });

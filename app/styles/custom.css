@@ -1,0 +1,52 @@
+ol {
+  @apply
+    list-decimal
+    list-inside
+    mt-3;
+}
+
+ul {
+  @apply
+    list-disc
+    list-inside
+    mt-3;
+}
+
+a {
+  @apply
+    underline
+    text-indigo-600;
+}
+
+a:hover {
+  @apply
+    text-pink-600;
+}
+
+code {
+  @apply
+    px-1
+    text-purple-600
+    font-mono
+    bg-gray-200;
+}
+
+p {
+  @apply
+    mt-3
+    mb-3;
+}
+
+h1 {
+  @apply
+    text-3xl
+    font-bold;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}

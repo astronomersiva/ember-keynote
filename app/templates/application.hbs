@@ -1,11 +1,11 @@
 {{#let (concat "slides/slide-" this.slide) as |Slide|}}
   <Slide
-    @isPaused={{this.isPaused}}
-    @togglePlayState={{this.togglePlayState}}
-    @goToPrevSlide={{this.goToPrevSlide}}
-    @goToNextSlide={{this.goToNextSlide}}
-    @paginationString={{this.paginationString}}
+    class="{{concat "slide-" this.slide}} {{if this.speaker "hidden md:flex" "flex"}}"
     @speaker={{this.speaker}} />
 {{/let}}
+
+{{#unless this.speaker}}
+  <ToggleFullScreen />
+{{/unless}}
 
 {{outlet}}

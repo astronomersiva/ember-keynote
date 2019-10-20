@@ -1,23 +1,9 @@
-<div
-  ...attributes
-  class="slide-1 {{if @speaker "hidden md:flex" "flex"}}">
+<div ...attributes>
   <h1 class="text-5xl text-center font-bold text-indigo-600 capitalize p-2">
     THIS IS AN EMBER APP!
   </h1>
-
-  <h2 class="text-2xl text-center font-bold text-gray-600 capitalize">
-    {{!-- EmberJS Chennai {{svg-jar "separator" class="icon"}} November, 2019 --}}
-  </h2>
 </div>
 
 {{#if @speaker}}
-  <SpeakerControls
-    @isPaused={{@isPaused}}
-    @togglePlayState={{@togglePlayState}}
-    @paginationString={{@paginationString}}
-    @goToPrevSlide={{@goToPrevSlide}}
-    @goToNextSlide={{@goToNextSlide}}
-    @notes={{this.notes}} />
-{{else}}
-  <ToggleFullScreen />
+  <SpeakerControls @notes={{this.notes}} />
 {{/if}}

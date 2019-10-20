@@ -10,15 +10,15 @@ module('Integration | Component | speaker', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Speaker />`);
+    await render(hbs`<SpeakerControls />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <Speaker>
+      <SpeakerControls>
         template block text
-      </Speaker>
+      </SpeakerControls>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');
