@@ -10,8 +10,6 @@ export default class ApplicationController extends Controller {
     'speaker'
   ];
 
-  name = 'Siva';
-
   @tracked slide = 1;
   @tracked speaker = false;
   @tracked isPaused = false;

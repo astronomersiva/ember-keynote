@@ -1,6 +1,6 @@
 <div
   ...attributes
-  class="slide-3 {{if @speaker "hidden md:flex" "flex"}}">
+  class="slide-4 {{if @speaker "hidden md:flex" "flex"}}">
 
   {{#let (get-code-snippet "slide.js" unindent=false) as |snippet|}}
     <CodeBlock @language="javascript" @code={{snippet.source}} />

@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import outdent from 'outdent';
 
-export default class SlidesSlide2Component extends Component {
+export default class SlidesSlide5Component extends Component {
   notes = outdent`
     Feel free to reach out to me on
 

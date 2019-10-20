@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Small description for ember-keynote goes here",
-  "repository": "",
+  "repository": "https://github.com/astronomersiva/ember-keynote",
   "license": "MIT",
   "author": "",
   "directories": {
