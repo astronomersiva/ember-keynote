@@ -43,7 +43,7 @@ export default class PresentationService extends Service {
     // the presentation is paused
     let canTransition = isSpeaker ? true : this.isRunning;
     if (canTransition) {
-      this.slide = slide;
+      this.slide = +slide;
       this.router.transitionTo({ queryParams: { slide } });
     }
   }
