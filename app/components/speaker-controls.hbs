@@ -1,12 +1,15 @@
 <div class="relative flex flex-col min-h-screen">
   <SlideNotes @notes={{@notes}} />
 
-  {{!-- 
-    Next slide preview, need to fix styling
-    {{#let (concat "slides/slide-" 2) as |Slide|}}
-      <Slide class="preview" />
+  
+  {{!-- Next slide preview, need to fix styling --}}
+  {{!-- <div class="absolute bottom-5 right-1/8">
+    {{#let (concat "slides/slide-" this.nextSlide) as |Slide|}}
+      <Slide
+        class="{{concat "slide-" this.nextSlide}} flex preview" />
     {{/let}}
-  --}}
+  </div> --}}
+ 
 
   <Clock />
   <ToggleFullScreen @speaker={{true}} />
