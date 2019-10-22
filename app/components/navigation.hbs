@@ -5,13 +5,12 @@
     class="
       {{unless this.presentation.isPrevSlidePossible "btn-disabled"}}
       opacity-50 hover:opacity-90
-      flex-grow
       flex-1"
   >
     {{svg-jar "previous" class="icon"}}
   </button>
 
-  <p class="pagination m-0 font-tabular-nums flex-grow flex-4">{{this.paginationString}}</p>
+  <p class="pagination m-0 font-tabular-nums flex-2">{{this.paginationString}}</p>
 
   {{!-- disabled attribute is not working o_O --}}
   <button
@@ -19,7 +18,6 @@
     class="
       {{unless this.presentation.isNextSlidePossible "btn-disabled"}}
       opacity-50 hover:opacity-90
-      flex-grow
       flex-1"
   >
     {{svg-jar "next" class="icon"}}
