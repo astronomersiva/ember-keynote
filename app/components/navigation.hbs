@@ -1,9 +1,27 @@
-<button {{action "goToPrevSlide"}} class="absolute bottom-10 left-1/8 opacity-25 hover:opacity-50">
-  {{svg-jar "previous" class="icon"}}
-</button>
+<div class="flex flex-row flex-grow items-center">
+  {{!-- disabled attribute is not working o_O --}}
+  <button
+    {{action "goToPrevSlide"}}
+    class="
+      {{unless this.presentation.isPrevSlidePossible "btn-disabled"}}
+      opacity-50 hover:opacity-90
+      flex-grow
+      flex-1"
+  >
+    {{svg-jar "previous" class="icon"}}
+  </button>
 
-<p class="pagination m-0">{{this.paginationString}}</p>
+  <p class="pagination m-0 font-tabular-nums flex-grow flex-4">{{this.paginationString}}</p>
 
-<button {{action "goToNextSlide"}} class="absolute bottom-10 right-1/8 opacity-25 hover:opacity-50">
-  {{svg-jar "next" class="icon"}}
-</button>
+  {{!-- disabled attribute is not working o_O --}}
+  <button
+    {{action "goToNextSlide"}}
+    class="
+      {{unless this.presentation.isNextSlidePossible "btn-disabled"}}
+      opacity-50 hover:opacity-90
+      flex-grow
+      flex-1"
+  >
+    {{svg-jar "next" class="icon"}}
+  </button>
+</div>

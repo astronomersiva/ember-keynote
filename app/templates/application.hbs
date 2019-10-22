@@ -1,11 +1,11 @@
 {{#let (concat "slides/slide-" this.slide) as |Slide|}}
   <Slide
-    class="{{concat "slide-" this.slide}} {{if this.speaker "hidden md:flex" "flex"}}"
+    class="{{concat "slide-" this.slide}} {{if this.speaker "hidden md:flex w-3/4" "flex"}}"
     @speaker={{this.speaker}} />
 {{/let}}
 
 {{#unless this.speaker}}
-  <ToggleFullScreen />
+  <FullScreen />
 {{/unless}}
 
 {{outlet}}

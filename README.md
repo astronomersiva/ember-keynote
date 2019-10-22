@@ -22,7 +22,8 @@ You will need the following things properly installed on your computer.
 
 * `ember serve`
 * For the speaker view, visit `publicip:4200/?speaker=true`.
-* For the audience view, visit `publicip:4200/`.
+* For the audience view, click on the `Open Presenter View icon` and drag the popup
+  window to the screen that is being shared.
 
 ### Usage
 
@@ -31,9 +32,7 @@ You will need the following things properly installed on your computer.
 You can switch between the slides by making use of the arrow keys
 or the `A` and `D` keys. You can also use the control buttons on the screen.
 
-![Controls](screenshots/controls.png)
-
-Use the Screen icon to toggle fullscreen view. This is also possible in the
+Use the Full Screen icon to toggle fullscreen view. This is also possible in the
 audience view but you will have to hover on the bottom right corner to see
 the toggle as it is hidden by default. I am open to improving the UX aspect of this.
 

@@ -16,9 +16,17 @@ export default class PresentationService extends Service {
     return !this.isRunning;
   }
 
+  get isNextSlidePossible() {
+    return +this.slide !== this.slides;
+  }
+
+  get isPrevSlidePossible() {
+    return +this.slide !== 1;
+  }
+
   goToPrevSlide() {
     let isSpeaker = this.router.currentRoute.queryParams.speaker;
-    if (isSpeaker && this.slide !== 1) {
+    if (isSpeaker && this.isPrevSlidePossible) {
       this.slide--;
       this.router.transitionTo({ queryParams: { slide: this.slide } });
 
@@ -28,7 +36,7 @@ export default class PresentationService extends Service {
 
   goToNextSlide() {
     let isSpeaker = this.router.currentRoute.queryParams.speaker;
-    if (isSpeaker && this.slide !== this.slides) {
+    if (isSpeaker && this.isNextSlidePossible) {
       this.slide++;
       this.router.transitionTo({ queryParams: { slide: this.slide } });
 

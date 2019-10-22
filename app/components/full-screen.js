@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
-export default class ToggleFullScreenComponent extends Component {
+export default class FullScreenComponent extends Component {
   @action
   toggleFullScreen() {
     if (!document.fullscreenElement) {

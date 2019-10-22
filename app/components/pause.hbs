@@ -1,11 +1,9 @@
 <button
   {{action "togglePlayState"}}
   class="
-    absolute
-    left-1/4 opacity-25 hover:opacity-50
-    bottom-5
-    text-lg
-    timer
+    opacity-50 hover:opacity-90
+    flex-grow
+    flex-1
     {{if this.presentation.isPaused "text-red-500 opacity-100"}}
   ">
   {{svg-jar (if this.presentation.isPaused "play" "pause") class="icon"}}

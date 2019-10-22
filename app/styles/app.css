@@ -7,6 +7,10 @@
 
 @import "./gh-colors.css";
 
+.font-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 .icon {
   @apply
     w-4
@@ -27,30 +31,15 @@
     justify-center;
 }
 
-.timer {
-  font-variant-numeric: tabular-nums;
-}
-
 .pagination {
-  transform: translateX(-50%);
-  font-variant-numeric: tabular-nums;
-  
   @apply
     font-mono
-    absolute
-    bottom-10
-    opacity-25
-    left-1/2;
+    opacity-70
+    text-center;
 }
 
 .preview {
   transform: scale(.4);
-}
-
-@media screen and (min-width: 641px) {
-  .speaker-notes {
-    width: 35vw;
-  }
 }
 
 .slide-1 h2 {
@@ -90,4 +79,15 @@
 
 .slide-5 {
   background-image: url('/images/clouds.jpg');
+}
+
+.btn-disabled {
+  @apply
+    opacity-20
+    cursor-not-allowed;
+}
+
+.btn-disabled:hover {
+  @apply
+    opacity-20;
 }
