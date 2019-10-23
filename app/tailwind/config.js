@@ -6,6 +6,7 @@ module.exports = {
   separator: ':',
   theme: {
     inset: {
+      '0': '0%',
       '5': '5%',
       '10':'10%',
       '1/2': '50%',
@@ -14,7 +15,14 @@ module.exports = {
       '3/4': '75%'
     },
     borderWidth: {
-      15: '15px'
+      default: '1px',
+      '0': '0',
+      '2': '2px',
+      '3': '3px',
+      '4': '4px',
+      '6': '6px',
+      '8': '8px',
+      '15': '15px'
     },
     opacity: {
       '0': '0',

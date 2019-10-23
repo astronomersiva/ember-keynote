@@ -12,7 +12,7 @@
    white-space: pre;
    word-spacing: normal;
    word-break: normal;
-   font-size: .9em;
+   /* font-size: .9em; */
    line-height: 1.2em;
  
    -moz-tab-size: 4;
@@ -25,9 +25,9 @@
    hyphens: none;
  }
  
- pre > code[class*="language-"] {
+ /* pre > code[class*="language-"] {
    font-size: 1em;
- }
+ } */
  
  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
