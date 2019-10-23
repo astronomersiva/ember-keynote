@@ -36,6 +36,12 @@ code {
     bg-gray-200;
 }
 
+pre > code {
+  @apply
+    text-xl
+    p-0;
+}
+
 p {
   @apply
     mt-3

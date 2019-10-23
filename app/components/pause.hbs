@@ -1,9 +1,11 @@
-<button
-  {{action "togglePlayState"}}
-  class="
-    opacity-50 hover:opacity-90
-    flex-1
-    {{if this.presentation.isPaused "text-red-500 opacity-100"}}
-  ">
-  {{svg-jar (if this.presentation.isPaused "play" "pause") class="icon"}}
-</button>
+{{#if this.presentation.hasStarted}}
+  <button
+    {{action "togglePlayState"}}
+    class="
+      opacity-50 hover:opacity-90
+      flex-1
+      {{if this.presentation.isPaused "text-red-500 opacity-100"}}
+    ">
+    {{svg-jar (if this.presentation.isPaused "play" "pause") class="icon"}}
+  </button>
+{{/if}}

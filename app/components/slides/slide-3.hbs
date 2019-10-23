@@ -1,9 +1,7 @@
 <div ...attributes>
-  {{#let (get-code-snippet "slide.hbs" unindent=false) as |snippet|}}
+  {{#let (get-code-snippet "slide.hbs") as |snippet|}}
     <CodeBlock @code={{snippet.source}} />
   {{/let}}
 </div>
 
-{{#if @speaker}}
-  <SpeakerControls @notes={{this.notes}} />
-{{/if}}
+{{yield this}}

@@ -38,23 +38,35 @@
     text-center;
 }
 
+.timer-overlay {
+  @apply
+    absolute
+    top-0
+    left-0
+    w-full
+    h-full
+    flex
+    justify-center
+    bg-gray-300;
+}
+
 .preview {
   transform: scale(.4);
 }
 
-.slide-1 h2 {
-  position: relative;
+.slide-1 {
+  background-image: url(/images/lights.jpg);
+  @apply
+    border-0
+    bg-center
+    bg-cover;
 }
 
-.slide-1 h2::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: 47%;
-  width: 10%;
-  height: 3px;
+.slide-1 h1 {
+  @apply relative;
 
-  @apply bg-indigo-600;
+  font-size: 6rem;
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.6)  
 }
 
 .slide-2,

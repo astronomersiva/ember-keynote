@@ -1,7 +1,15 @@
 {{#let (concat "slides/slide-" this.slide) as |Slide|}}
   <Slide
-    class="{{concat "slide-" this.slide}} {{if this.speaker "hidden md:flex w-3/4" "flex"}}"
-    @speaker={{this.speaker}} />
+    @speaker={{this.speaker}}
+    class="
+      {{concat "slide-" this.slide}}
+      {{if this.speaker "hidden md:flex w-3/4" "flex"}}
+    " as |slide|>
+
+    {{#if this.speaker}}
+      <SpeakerControls @notes={{slide.notes}} />
+    {{/if}}
+  </Slide>
 {{/let}}
 
 {{#unless this.speaker}}
