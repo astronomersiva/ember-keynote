@@ -1,6 +1,7 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import { later } from '@ember/runloop';
 
 export default class PresentationService extends Service {
   @service socketManager;
@@ -9,8 +10,19 @@ export default class PresentationService extends Service {
   @tracked isRunning = 1;
   @tracked slide = 1;
 
+  @tracked hasStarted = false;
+  @tracked startTime = null;
+  @tracked elapsedTime = null;
+
   // Need to find a way do this dynamically
   slides = 5;
+
+  init() {
+    super.init(...arguments);
+
+    // this is to reset the timer on all tabs of the speaker
+    this.socketManager.socket.on('sync-time', this.syncTime, this);
+  }
 
   get isPaused() {
     return !this.isRunning;
@@ -67,5 +79,29 @@ export default class PresentationService extends Service {
     if (this.isRunning) {
       this.emitTransition();
     }
+  }
+
+  syncTime(newStartTime) {
+    this.startTime = new Date(newStartTime);
+  }
+
+  startPresentation() {
+    this.hasStarted = true;
+    this.startTime = new Date();
+    this.startTicking();
+
+    this.socketManager.socket.emit('reset-time', this.startTime);
+  }
+
+  // Need to check this for memory leaks
+  startTicking() {
+    this.elapsedTime = new Date() - this.startTime;
+    later(this, this.startTicking, 1000);
+  }
+
+  willDestroy() {
+    this.socketManager.socket.off('sync-time', this.syncTime);
+
+    super.willDestroy(...arguments);
   }
 }

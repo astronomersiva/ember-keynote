@@ -2,11 +2,18 @@
   ...attributes
   class="
     text-lg
-    opacity-70
     font-mono
     text-center
     font-tabular-nums
-    flex-2
+    flex-1
   ">
-  {{this.currentTime}}
+
+  {{#if this.presentation.hasStarted}}
+    <p class="opacity-70">{{this.formattedTime}}</p>
+  {{else}}
+    <p>--</p>
+    <div class="timer-overlay">
+      <button class="underline" {{action "startTicking"}}>Start Presentation</button>
+    </div>
+  {{/if}}
 </div>
