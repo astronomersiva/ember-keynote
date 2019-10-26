@@ -11,8 +11,6 @@ export default class SlidesSlide2Component extends Component {
       \`speaker=true\` query param.
     * Click on the \`Open Presenter View\` icon to toggle the Presentation view. Drag
       and drop the popup window on the projector display.
-    * A weird behavior -> you need to set the \`slides\` property on the presentation
-      service to the number of slides that you have. I am looking for ideas on how
-      to improve this. Maybe this can also be a QP?
+    * Just make sure you have the slides numbered sequentially.
   `
 }

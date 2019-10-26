@@ -2,6 +2,7 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import { later } from '@ember/runloop';
+import { getOwner } from '@ember/application';
 
 export default class PresentationService extends Service {
   @service socketManager;
@@ -9,17 +10,22 @@ export default class PresentationService extends Service {
 
   @tracked isRunning = 1;
   @tracked slide = 1;
+  @tracked slides = 0;
 
   @tracked hasStarted = false;
   @tracked startTime = null;
   @tracked elapsedTime = null;
   @tracked canShowAdjacentSlides = false;
 
-  // Need to find a way do this dynamically
-  slides = 5;
-
   init() {
     super.init(...arguments);
+
+    // dynamically populate the number of slides
+    let owner = getOwner(this);
+    let i = this.slide;
+    while(owner.hasRegistration(`component:slides/slide-${i++}`)) {
+      this.slides++;
+    }
 
     // this is to reset the timer on all tabs of the speaker
     this.socketManager.socket.on('sync-time', this.syncTime, this);
