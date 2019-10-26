@@ -1,0 +1,14 @@
+{{!-- Shows the prev and next slides, need to fix styling and probably make it a two col layout --}}
+{{#if this.presentation.canShowAdjacentSlides}}
+  <div class="hidden md:flex preview hover:opacity-100">
+    {{#let (concat "slides/slide-" this.previousSlide) as |Slide|}}
+      <Slide
+        class="{{concat "slide-" this.previousSlide}} min-h-full flex" />
+    {{/let}}
+
+    {{#let (concat "slides/slide-" this.nextSlide) as |Slide|}}
+      <Slide
+        class="{{concat "slide-" this.nextSlide}} min-h-full flex" />
+    {{/let}}
+  </div> 
+{{/if}}

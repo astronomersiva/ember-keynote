@@ -1,10 +1,4 @@
-<div class="speaker-notes p-8 flex-8 w-full">
-  {{!-- <div class="absolute top-5 right-1/8 text-lg opacity-25 font-mono">
-    <button {{action "toggleNoteVisibility"}}>
-      {{if this.isHidden "Show Notes" "Hide Notes"}}
-    </button>
-  </div> --}}
-
+<div class="speaker-notes p-8 flex-4 md:flex-8 w-full">
   {{#if @notes}}
     <div class="whitespace-normal max-h-4/5vh overflow-scroll">
       {{markdown-to-html @notes}}

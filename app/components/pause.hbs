@@ -1,6 +1,6 @@
 {{#if this.presentation.hasStarted}}
   <button
-    {{action "togglePlayState"}}
+    {{on "click" this.togglePlayState}}
     class="
       opacity-50 hover:opacity-90
       flex-1

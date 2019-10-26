@@ -1,7 +1,7 @@
 <div class="flex flex-row flex-grow items-center">
   {{!-- disabled attribute is not working o_O --}}
   <button
-    {{action "goToPrevSlide"}}
+    {{on "click" this.goToPrevSlide}}
     class="
       {{unless this.presentation.isPrevSlidePossible "btn-disabled"}}
       opacity-50 hover:opacity-90
@@ -14,7 +14,7 @@
 
   {{!-- disabled attribute is not working o_O --}}
   <button
-    {{action "goToNextSlide"}}
+    {{on "click" this.goToNextSlide}}
     class="
       {{unless this.presentation.isNextSlidePossible "btn-disabled"}}
       opacity-50 hover:opacity-90

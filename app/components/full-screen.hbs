@@ -1,5 +1,5 @@
 <button
-  {{action "toggleFullScreen"}}
+  {{on "click" this.toggleFullScreen}}
   class="
     {{if @speaker "opacity-50 hover:opacity-90" "absolute right-5 bottom-5 opacity-0 hover:opacity-50"}}
     flex-1

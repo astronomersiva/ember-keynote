@@ -13,6 +13,7 @@ export default class PresentationService extends Service {
   @tracked hasStarted = false;
   @tracked startTime = null;
   @tracked elapsedTime = null;
+  @tracked canShowAdjacentSlides = false;
 
   // Need to find a way do this dynamically
   slides = 5;
@@ -97,6 +98,10 @@ export default class PresentationService extends Service {
   startTicking() {
     this.elapsedTime = new Date() - this.startTime;
     later(this, this.startTicking, 1000);
+  }
+
+  toggleAdjacentSlides() {
+    this.canShowAdjacentSlides = !this.canShowAdjacentSlides;
   }
 
   willDestroy() {

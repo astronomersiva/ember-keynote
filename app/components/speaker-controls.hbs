@@ -3,21 +3,13 @@
   class="relative flex flex-col min-h-screen w-full md:w-1/4">
   <SlideNotes @notes={{@notes}} />
 
-  
-  {{!-- Next slide preview, need to fix styling --}}
-  {{!-- <div class="bottom-5 right-1/8">
-    {{#let (concat "slides/slide-" this.nextSlide) as |Slide|}}
-      <Slide
-        class="{{concat "slide-" this.nextSlide}} flex preview" />
-    {{/let}}
-  </div>  --}}
-
   <div class="flex flex-col flex-grow w-full bg-gray-200 border-gray-300 border-t-2">
     <Navigation />
 
     <div class="flex flex-row flex-grow items-center">
       <FullScreen @speaker={{true}} />
       <PresentationView />
+      <AdjacentSlidesToggle />
       <Clock />
       <Pause />
     </div>

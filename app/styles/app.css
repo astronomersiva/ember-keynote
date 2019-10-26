@@ -22,6 +22,7 @@
 
 [class*="slide"] {
   @apply
+    bg-white
     border-15
     border-solid
     border-indigo-200
@@ -51,7 +52,18 @@
 }
 
 .preview {
-  transform: scale(.4);
+  height: 500px;
+
+  @apply
+    absolute
+    bottom-0
+    left-0
+    opacity-20;
+}
+
+.preview,
+.preview * {
+  transform: scale(.6);
 }
 
 .slide-1 {

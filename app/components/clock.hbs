@@ -13,7 +13,7 @@
   {{else}}
     <p>--</p>
     <div class="timer-overlay">
-      <button class="underline" {{action "startTicking"}}>Start Presentation</button>
+      <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
     </div>
   {{/if}}
 </div>
