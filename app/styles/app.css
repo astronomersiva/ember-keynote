@@ -40,15 +40,19 @@
 }
 
 .timer-overlay {
+  z-index: 2;
+
   @apply
     absolute
-    top-0
     left-0
-    w-full
-    h-full
     flex
     justify-center
-    bg-gray-300;
+    text-2xl
+    bg-gray-200
+    opacity-90
+    border-gray-300
+    border-t-2
+    p-2;
 }
 
 .preview {

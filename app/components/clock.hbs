@@ -8,12 +8,5 @@
     flex-1
   ">
 
-  {{#if this.presentation.hasStarted}}
-    <p class="opacity-70">{{this.formattedTime}}</p>
-  {{else}}
-    <p>--</p>
-    <div class="timer-overlay">
-      <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
-    </div>
-  {{/if}}
+  <p class="opacity-70">{{this.formattedTime}}</p>
 </div>

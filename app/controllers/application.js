@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { bind } from '@ember/runloop';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
@@ -49,6 +50,11 @@ export default class ApplicationController extends Controller {
 
   handlePlayStateChange(status) {
     this.presentation.isRunning = status;
+  }
+
+  @action
+  startTicking() {
+    this.presentation.startPresentation();
   }
 
   willDestroy() {

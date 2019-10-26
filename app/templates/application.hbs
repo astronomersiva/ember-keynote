@@ -4,9 +4,15 @@
     class="
       {{concat "slide-" this.slide}}
       {{if this.speaker "hidden md:flex w-3/4" "flex"}}
-    " as |slide|>
-
+    " as |slide|
+  >
     {{#if this.speaker}}
+      {{#unless this.presentation.hasStarted}}
+        <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
+          <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
+        </div>
+      {{/unless}}
+
       <AdjacentSlides />
       <SpeakerControls @notes={{slide.notes}} />
     {{/if}}
