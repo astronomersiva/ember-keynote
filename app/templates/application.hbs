@@ -1,26 +1,28 @@
 {{#let (concat "slides/slide-" this.slide) as |Slide|}}
-  <Slide
-    @speaker={{this.speaker}}
-    class="
-      {{concat "slide-" this.slide}}
-      {{if this.speaker "hidden md:flex w-3/4" "flex"}}
-    " as |slide|
-  >
-    {{#if this.speaker}}
-      {{#unless this.presentation.hasStarted}}
-        <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
-          <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
-        </div>
-      {{/unless}}
+  {{#liquid-bind Slide use=this.transitionDirection class="transitions-container" as |Slide|}}
+    <Slide
+      @speaker={{this.speaker}}
+      class="
+        {{concat "slide-" this.slide}}
+        {{if this.speaker "hidden md:flex w-3/4" "flex"}}
+      " as |slide|
+    >
+      {{#if this.speaker}}
+        {{#unless this.presentation.hasStarted}}
+          <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
+            <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
+          </div>
+        {{/unless}}
 
-      <AdjacentSlides />
-      <SpeakerControls @notes={{slide.notes}} />
-    {{/if}}
-  </Slide>
+        <AdjacentSlides />
+        <SpeakerControls @notes={{slide.notes}} />
+      {{/if}}
+    </Slide>
+  {{/liquid-bind}}
 {{/let}}
 
 {{#unless this.speaker}}
   <FullScreen />
 {{/unless}}
 
-{{outlet}}
+{{liquid-outlet}}

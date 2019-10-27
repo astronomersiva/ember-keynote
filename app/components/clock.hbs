@@ -8,5 +8,9 @@
     flex-1
   ">
 
-  <p class="opacity-70">{{this.formattedTime}}</p>
+  <p class="opacity-70">
+    <div id="liquid-timer" class="inline-flex">
+      {{liquid-bind this.formattedMinutes}}:{{liquid-bind this.formattedSeconds}}
+    </div>
+  </p>
 </div>

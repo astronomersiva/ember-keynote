@@ -29,7 +29,16 @@
     flex-1
     flex-col
     items-center
-    justify-center;
+    justify-center
+    min-h-screen;
+}
+
+.transitions-container {
+  @apply w-full min-h-full;
+}
+
+.transitions-container > .liquid-child {
+  display: flex;
 }
 
 .pagination {

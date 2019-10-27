@@ -16,6 +16,7 @@ export default class ApplicationController extends Controller {
 
   @tracked speaker;
   @tracked slide;
+  @tracked transitionDirection = 'crossFade';
 
   init() {
     super.init(...arguments);
