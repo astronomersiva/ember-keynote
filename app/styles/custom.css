@@ -61,3 +61,26 @@ h2 {
 h3 {
   @apply text-xl;
 }
+
+.btn-disabled {
+  @apply
+    opacity-20
+    cursor-not-allowed;
+}
+
+.btn-disabled:hover {
+  @apply
+    opacity-20;
+}
+.font-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.icon {
+  @apply
+    w-4
+    h-4
+    inline
+    align-baseline
+    stroke-current;
+}

@@ -1,0 +1,10 @@
+{{#let (get-code-snippet @snippet) as |snippet|}}
+  {{!-- ember-prism renders an empty string if an unsupported language is passed --}}
+  {{#if this.language}}
+    <CodeBlock
+      @language={{this.language}}
+      @code={{snippet.source}} />
+  {{else}}
+    <CodeBlock @code={{snippet.source}} />
+  {{/if}}
+{{/let}}

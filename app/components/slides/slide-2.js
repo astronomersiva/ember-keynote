@@ -8,7 +8,7 @@ export default class SlidesSlide2Component extends Component {
     * Write templates as you please.
     * Run \`ember s\`.
     * Visit the app using the public IP address. Remember to add the
-      \`speaker=true\` query param.
+      \`speaker\` query param.
     * Click on the \`Open Presenter View\` icon to toggle the Presentation view. Drag
       and drop the popup window on the projector display.
     * Just make sure you have the slides numbered sequentially.

@@ -7,7 +7,8 @@ import { inject as service } from '@ember/service';
 export default class ApplicationController extends Controller {
   queryParams = [
     'slide',
-    'speaker'
+    'speaker',
+    'download'
   ];
 
   @service socketManager;
@@ -16,6 +17,7 @@ export default class ApplicationController extends Controller {
 
   @tracked speaker;
   @tracked slide;
+  @tracked download;
 
   init() {
     super.init(...arguments);
