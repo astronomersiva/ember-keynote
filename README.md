@@ -4,6 +4,14 @@ This was built as a demo for my talk on using WebSockets with Ember.
 If you would like to use this, feel free to fork this repo and add
 your slides as components.
 
+## Features
+
+* Create interactive EmberJS presentations.
+* Sync your presentation across all screens.
+* Speaker mode with notes, timer and previews of the next and previous slides.
+* Export all slides as PDF.
+* Write slides and notes in markdown.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -21,7 +29,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember serve`
-* For the speaker view, visit `publicip:4200/?speaker=true`.
+* For the speaker view, visit `publicip:4200/?speaker`.
 * For the audience view, click on the `Open Presenter View icon` and drag the popup
   window to the screen that is being shared.
 
@@ -29,7 +37,7 @@ You will need the following things properly installed on your computer.
 
 ![ember-keynote](screenshots/app.jpg)
 
-You can switch between the slides by making use of the arrow keys
+You can switch between the slides by making use of the `arrow keys`
 or the `A` and `D` keys. You can also use the control buttons on the screen.
 
 Use the Full Screen icon to toggle fullscreen view. This is also possible in the
@@ -41,6 +49,12 @@ slides will remain frozen for the audience. It will get synced again when you
 resume the presentation.
 
 You can add slide notes by adding them to the respective slide component's class.
+
+To export the presentation as a PDF, use the `download` query parameter. You can then
+use the browser's `Save as PDF` feature to download the presentation. Please ensure
+that the `Background graphics` option is checked.
+
+![Background graphics option in Save as PDF dialog](screenshots/download.jpg)
 
 ### Deploying
 

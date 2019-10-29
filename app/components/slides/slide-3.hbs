@@ -1,7 +1,8 @@
-<div ...attributes>
-  {{#let (get-code-snippet "slide.hbs") as |snippet|}}
-    <CodeBlock @code={{snippet.source}} />
-  {{/let}}
+<div
+  ...attributes
+  class="slide-bordered"
+>
+  <Code @snippet="slide.hbs" />
 </div>
 
 {{yield this}}

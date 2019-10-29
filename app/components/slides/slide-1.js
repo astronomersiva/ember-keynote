@@ -8,11 +8,11 @@ export default class SlidesSlide1Component extends Component {
 
     * Built the Octane way.
     * Uses websockets(with socket.io) to sync slides across the audience.
-    * Code Embeds
-    * Supports Presenter Notes. Use even markdown!
     * Styled with Tailwind.
-    * A Clock to keep track of your progress.
+    * Code Embeds
+    * Speaker mode with notes, timer and previews of the next and previous slides.
+    * Write slides and notes in markdown.
+    * Export slides as PDF.
     * Supports pausing the presentation for the audience.
-    * Control the slides with your phone!
   `;
 }

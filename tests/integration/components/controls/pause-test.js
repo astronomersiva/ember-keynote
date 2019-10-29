@@ -3,15 +3,15 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | navigation', function(hooks) {
+module('Integration | Component | controls/pause', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Navigation />`);
+    await render(hbs`<Controls::Pause />`);
 
-    assert.equal(this.element.textContent.trim(), '1 / 5');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

@@ -1,26 +1,24 @@
-{{#let (concat "slides/slide-" this.slide) as |Slide|}}
-  <Slide
-    @speaker={{this.speaker}}
-    class="
-      {{concat "slide-" this.slide}}
-      {{if this.speaker "hidden md:flex w-3/4" "flex"}}
-    " as |slide|
-  >
-    {{#if this.speaker}}
-      {{#unless this.presentation.hasStarted}}
-        <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
-          <button class="underline" {{on "click" this.startTicking}}>Start Presentation</button>
-        </div>
-      {{/unless}}
+<div class="flex h-screen {{if this.download "flex-col"}}">
+  {{#if this.download}}
+    {{#each (range 1 (inc this.presentation.slides)) as |slide|}}
+      <PresentationContainer
+        @slide={{slide}}
+        @speaker={{this.speaker}}
+        @hasStarted={{this.presentation.hasStarted}}
+        @startTicking={{this.startTicking}}
+        @isExport={{true}} />
+    {{/each}}
+  {{else}}
+    <PresentationContainer
+      @slide={{this.slide}}
+      @speaker={{this.speaker}}
+      @hasStarted={{this.presentation.hasStarted}}
+      @startTicking={{this.startTicking}} />
+  {{/if}}
 
-      <AdjacentSlides />
-      <SpeakerControls @notes={{slide.notes}} />
-    {{/if}}
-  </Slide>
-{{/let}}
-
-{{#unless this.speaker}}
-  <FullScreen />
-{{/unless}}
+  {{#unless this.speaker}}
+    <Controls::FullScreen />
+  {{/unless}}
+</div>
 
 {{outlet}}

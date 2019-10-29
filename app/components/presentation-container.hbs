@@ -1,0 +1,21 @@
+{{#let (concat "slides/slide-" @slide) as |Slide|}}
+  <Slide
+    @speaker={{@speaker}}
+    class="
+      {{concat "slide-" @slide}}
+      {{if @speaker "hidden md:flex w-3/4" "flex"}}
+      {{if @isExport "min-h-full"}}
+    " as |slide|
+  >
+    {{#if @speaker}}
+      {{#unless @hasStarted}}
+        <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
+          <button class="underline" {{on "click" @startTicking}}>Start Presentation</button>
+        </div>
+      {{/unless}}
+
+      <Controls::AdjacentSlides />
+      <Controls::SpeakerControls @notes={{slide.notes}} />
+    {{/if}}
+  </Slide>
+{{/let}}

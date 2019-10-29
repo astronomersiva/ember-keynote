@@ -1,0 +1,17 @@
+<div
+  ...attributes
+  class="relative flex flex-col min-h-screen w-full md:w-1/4 border-gray-300 border-4">
+  <Controls::SlideNotes @notes={{@notes}} />
+
+  <div class="flex flex-col flex-grow w-full bg-gray-200 border-gray-300 border-t-2">
+    <Controls::Navigation />
+
+    <div class="flex flex-row flex-grow items-center">
+      <Controls::FullScreen @speaker={{true}} />
+      <Controls::PresentationView />
+      <Controls::AdjacentSlidesToggle />
+      <Controls::Clock />
+      <Controls::Pause />
+    </div>
+  </div>
+</div>

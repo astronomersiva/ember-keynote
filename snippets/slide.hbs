@@ -1,13 +1,8 @@
-<div ...attributes>
-  {{!-- Start Slide --}}
-  <h1 class="text-5xl text-center font-bold text-indigo-600 capitalize p-2">
-    One more thing.
-  </h1>
-
-  {{#let (get-code-snippet "slide.js") as |snippet|}}
-    <CodeBlock @language="javascript" @code={{snippet.source}} />
-  {{/let}}
-  {{!-- End Slide --}}
+<div
+  ...attributes
+  class="slide-bordered"
+>
+  <Code @snippet="slide.hbs" />
 </div>
 
 {{yield this}}

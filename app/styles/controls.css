@@ -1,0 +1,46 @@
+[class*="slide"] {
+  @apply
+    bg-white
+    flex-1
+    flex-col
+    items-center
+    justify-center;
+}
+
+.pagination {
+  @apply
+    font-mono
+    opacity-70
+    text-center;
+}
+
+.timer-overlay {
+  z-index: 2;
+
+  @apply
+    absolute
+    left-0
+    flex
+    justify-center
+    text-2xl
+    bg-gray-200
+    opacity-90
+    border-gray-300
+    border-t-2
+    p-2;
+}
+
+.preview {
+  height: 500px;
+
+  @apply
+    absolute
+    bottom-0
+    left-0
+    opacity-20;
+}
+
+.preview,
+.preview * {
+  transform: scale(.6);
+}
