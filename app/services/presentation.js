@@ -3,6 +3,8 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import { later } from '@ember/runloop';
 import { getOwner } from '@ember/application';
+import { action } from '@ember/object';
+import { bind } from '@ember/runloop';
 
 export default class PresentationService extends Service {
   @service socketManager;
@@ -29,6 +31,9 @@ export default class PresentationService extends Service {
 
     // this is to reset the timer on all tabs of the speaker
     this.socketManager.socket.on('sync-time', this.syncTime, this);
+
+    this.set('keyPressHandler', bind(this, 'respondToKeyPress'));
+    document.addEventListener('keydown', this.keyPressHandler);
   }
 
   get isPaused() {
@@ -92,14 +97,6 @@ export default class PresentationService extends Service {
     this.startTime = new Date(newStartTime);
   }
 
-  startPresentation() {
-    this.hasStarted = true;
-    this.startTime = new Date();
-    this.startTicking();
-
-    this.socketManager.socket.emit('reset-time', this.startTime);
-  }
-
   // Need to check this for memory leaks
   startTicking() {
     this.elapsedTime = new Date() - this.startTime;
@@ -110,8 +107,33 @@ export default class PresentationService extends Service {
     this.canShowAdjacentSlides = !this.canShowAdjacentSlides;
   }
 
+  respondToKeyPress({ keyCode }) {
+    // left arrow or A key
+    let isLeft = [37, 65].includes(keyCode);
+    // right arrow or D key
+    let isRight = [39, 68].includes(keyCode);
+
+    if (isLeft) {
+      this.goToPrevSlide();
+    }
+
+    if (isRight) {
+      this.goToNextSlide()
+    }
+  }
+
+  @action
+  startPresentation() {
+    this.hasStarted = true;
+    this.startTime = new Date();
+    this.startTicking();
+
+    this.socketManager.socket.emit('reset-time', this.startTime);
+  }
+
   willDestroy() {
     this.socketManager.socket.off('sync-time', this.syncTime);
+    document.removeEventListener('keydown', this.keyPressHandler);
 
     super.willDestroy(...arguments);
   }

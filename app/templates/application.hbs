@@ -4,16 +4,12 @@
       <PresentationContainer
         @slide={{slide}}
         @speaker={{this.speaker}}
-        @hasStarted={{this.presentation.hasStarted}}
-        @startTicking={{this.startTicking}}
         @isExport={{true}} />
     {{/each}}
   {{else}}
     <PresentationContainer
       @slide={{this.slide}}
-      @speaker={{this.speaker}}
-      @hasStarted={{this.presentation.hasStarted}}
-      @startTicking={{this.startTicking}} />
+      @speaker={{this.speaker}} />
   {{/if}}
 
   {{#unless this.speaker}}

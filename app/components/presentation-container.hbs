@@ -8,9 +8,14 @@
     " as |slide|
   >
     {{#if @speaker}}
-      {{#unless @hasStarted}}
+      {{#unless this.presentation.hasStarted}}
         <div class="timer-overlay w-full md:w-3/4 md:h-full bottom-26 md:top-0">
-          <button class="underline" {{on "click" @startTicking}}>Start Presentation</button>
+          <button
+            class="underline"
+            {{on "click" this.presentation.startPresentation}}
+          >
+            Start Presentation
+          </button>
         </div>
       {{/unless}}
 
