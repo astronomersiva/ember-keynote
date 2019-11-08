@@ -4,7 +4,7 @@ import outdent from 'outdent';
 export default class SlidesSlide2Component extends Component {
   notes = outdent`
     * Fork the [project on GitHub](https://github.com/astronomersiva/ember-keynote).
-    * Add slides as components under \`slides\`. For example, \`slides/slides-1\`.
+    * Add slides as components under \`slides\`. For example, \`slides/slide-1\`.
     * Write templates as you please.
     * Run \`ember s\`.
     * Visit the app using the public IP address. Remember to add the
