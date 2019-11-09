@@ -32,6 +32,12 @@ You will need the following things properly installed on your computer.
 * For the speaker view, visit `publicip:4200/?speaker`.
 * For the audience view, click on the `Open Presenter View icon` and drag the popup
   window to the screen that is being shared.
+  
+## Presenting
+
+You can use the presenter view explained below or use your phone. To use your phone,
+connect your laptop and phone to the same network and just use the slide controls on
+your phone to automatically sync the slides across all audience devices.
 
 ### Usage
 
